@@ -1,0 +1,47 @@
+.upload-avatar-box {
+    width: 100% !important;
+    overflow-x: auto;
+  }
+  
+  .display-none {
+    display: none;
+  }
+  
+  .image-crop-loader-outers-section {
+    border: 1px dashed black;
+    border-width: medium;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .height-80-percent {
+    height: 80%;
+  }
+  .height-85-percent {
+    height: 85%;
+  }
+  .height-92-percent {
+    height: 92%;
+  }
+  .height-100-percent {
+    height: 100%;
+  }
+  .click-text {
+    text-align: center;
+  }
+
+  .main-upload-section{
+      padding: 10px;
+      height: 396px;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .upload-avatar-box {
+      width: 100% !important;
+    }
+  }

@@ -1,0 +1,9 @@
+.react-responsive-modal-modal{
+    height: 500px;
+    width: 520px;
+    overflow-y: auto;
+}
+button {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
