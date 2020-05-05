@@ -11,6 +11,15 @@ function setloggedIn(bool) {
     }
 }
 
+const LoginUser = (bool) => {
+    bool ? 
+        localStorage.setItem('isLoggedIn', true) :
+        localStorage.removeItem('isLoggedIn')
+
+    return dispatch => {
+        dispatch(setloggedIn(bool));
+    }
+}
 
 function setLoading(bool) {
     return {
@@ -57,6 +66,7 @@ const signUpUser = (data, callback) => {
             .then((response) => {
                 dispatch(setloggedIn(true))
                 dispatch(setLoading(false));
+                LoginUser(true)
                 setTimeout(()=>callback({ flag: true, response: response }));
             })
             .catch((err) => {
@@ -66,15 +76,7 @@ const signUpUser = (data, callback) => {
     }
 }
 
-const LoginUser = (bool) => {
-    bool ? 
-        localStorage.setItem('isLoggedIn', true) :
-        localStorage.removeItem('isLoggedIn')
 
-    return dispatch => {
-        dispatch(setloggedIn(bool));
-    }
-}
 
 export {
     setloggedIn,
