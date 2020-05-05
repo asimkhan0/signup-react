@@ -53,7 +53,6 @@ const uploadProfilePicture = (data, callback) => {
 const signUpUser = (data, callback) => {
     return dispatch => {
         dispatch(setLoading(true));
-        debugger
         return axios.post('https://httpbin.org/anything/signup', data)
             .then((response) => {
                 dispatch(setloggedIn(true))
@@ -68,6 +67,10 @@ const signUpUser = (data, callback) => {
 }
 
 const LoginUser = (bool) => {
+    bool ? 
+        localStorage.setItem('isLoggedIn', true) :
+        localStorage.removeItem('isLoggedIn')
+
     return dispatch => {
         dispatch(setloggedIn(bool));
     }
