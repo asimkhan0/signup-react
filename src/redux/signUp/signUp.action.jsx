@@ -23,7 +23,7 @@ const getUUID = callback => {
     return dispatch => {
         dispatch(setLoading(true));
         //TODO: if created a constants file, put these URLs to there.
-        return axios.get('http://httpbin.org/uuid')
+        return axios.get('https://httpbin.org/uuid')
             .then((response) => {
                 callback({ flag: true, uuid: response.data.uuid });
                 dispatch(setLoading(false));
@@ -38,7 +38,7 @@ const getUUID = callback => {
 const uploadProfilePicture = (data, callback) => {
     return dispatch => {
         dispatch(setLoading(true));
-        return axios.post('http://httpbin.org/anything/pictures', data)
+        return axios.post('https://httpbin.org/anything/pictures', data)
             .then((response) => {
                 callback({ flag: true, response: response });
                 dispatch(setLoading(false));
@@ -54,7 +54,7 @@ const signUpUser = (data, callback) => {
     return dispatch => {
         dispatch(setLoading(true));
         debugger
-        return axios.post('http://httpbin.org/anything/signup', data)
+        return axios.post('https://httpbin.org/anything/signup', data)
             .then((response) => {
                 dispatch(setloggedIn(true))
                 dispatch(setLoading(false));
